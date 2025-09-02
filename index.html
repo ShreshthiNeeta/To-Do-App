@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple to-do list app with date support to manage daily tasks."
+    />
+    <title>To-do</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body data-theme="light">
+    <main class="todo fade-in">
+      <div class="header">
+        <h1>To-do list</h1>
+        <button id="themeToggle" type="button" aria-pressed="false">
+          🌙 Dark Mode
+        </button>
+      </div>
+
+      <form class="input" id="todoForm" novalidate>
+        <label for="todoInput" class="sr-only">Add a new todo</label>
+        <input
+          type="text"
+          class="input-field"
+          id="todoInput"
+          placeholder="✍️ Add a new todo..."
+          aria-label="Add a new todo"
+          required
+        />
+        <label for="todoDate" class="sr-only">Select a date</label>
+        <input
+          type="date"
+          class="input-field date-field"
+          id="todoDate"
+          aria-label="Select a date"
+          required
+        />
+        <button type="submit" class="btn">➕ Add</button>
+      </form>
+
+      <p id="errorMsg" class="error-msg" aria-live="polite"></p>
+
+      <ul class="scroll" id="todoList"></ul>
+
+      <div>
+        <hr class="counter" />
+        <div class="counter-container">
+          <p><span id="todoCount" aria-live="polite">0</span> items total</p>
+          <button type="button" id="deleteButton">🗑 Delete All</button>
+        </div>
+      </div>
+      <!-- How It Works Section -->
+      <section class="how-it-works">
+        <button
+          type="button"
+          id="howToggle"
+          class="how-toggle"
+          aria-expanded="false"
+        >
+          How It Works ⯈
+        </button>
+        <div class="how-content">
+          <ul>
+            <li>
+              <strong>Add Task:</strong> Enter your task and select a date, then
+              click ➕ Add.
+            </li>
+            <li>
+              <strong>Edit Task:</strong> Click on the task text to edit it,
+              press Enter to save or Escape to cancel.
+            </li>
+            <li>
+              <strong>Mark Complete:</strong> Click the checkbox next to a task
+              to mark it as done or undo it.
+            </li>
+            <li>
+              <strong>Delete Task:</strong> Click ❌ on a task to remove it
+              individually.
+            </li>
+            <li>
+              <strong>Delete All:</strong> Click 🗑 Delete All to remove all
+              tasks at once.
+            </li>
+            <li>
+              <strong>Theme Toggle:</strong> Use the 🌙 / ☀️ button to switch
+              between Light and Dark modes.
+            </li>
+            <li>
+              <strong>Overdue Tasks:</strong> Tasks past their due date will be
+              highlighted in red.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>Made by <span class="author">Shreshti</span></p>
+    </footer>
+  </body>
+</html>
